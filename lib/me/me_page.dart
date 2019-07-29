@@ -89,7 +89,7 @@ class _MePageState extends State<MePage> {
                   ),
                   Text(
                     title,
-                    style: TextStyle(fontSize: 12.0),
+                    style: TextStyle(fontSize: 15.0),
                   ),
                 ],
               ),
@@ -97,7 +97,7 @@ class _MePageState extends State<MePage> {
           ),
           Text(
             subTitle,
-            style: TextStyle(fontSize: 10.0, color: Colors.grey),
+            style: TextStyle(fontSize: 13.0, color: Colors.grey),
           ),
           Icon(Icons.chevron_right),
         ],

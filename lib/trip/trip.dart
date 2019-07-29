@@ -22,7 +22,7 @@ class _TripPageState extends State<TripPage> {
       splashColor: Colors.white,
       label: Text(
         "添加行程",
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: Colors.white,fontSize: 20),
       ),
       onPressed: () {},
       shape: RoundedRectangleBorder(
