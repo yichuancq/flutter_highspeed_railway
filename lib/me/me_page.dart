@@ -23,9 +23,7 @@ class _MePageState extends State<MePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           ClipOval(
-              child: Image.asset(
-            "assets/image/girl2.jpeg",
-            height: 100.0,
+              child: Image.asset("assets/image/girl2.jpeg", height: 100.0,
           )),
           SizedBox(
             width: 5.0,
@@ -39,7 +37,7 @@ class _MePageState extends State<MePage> {
     );
   }
 
-  ///全部订单，待支付，待出行
+  ///全部订单，待支付，待出行x
   Widget _headerBarBtn() {
     /// 全部订单，待支付，待出行
     var list = <Widget>[];

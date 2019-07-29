@@ -45,17 +45,20 @@ class _TabScaffoldState extends State<TabScaffold> {
               title: Text("首页")), //tabbar标题
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.card_travel,size: 25,
+                Icons.card_travel,
+                size: 25,
               ),
               title: Text("行程")),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.videocam,size: 25,
+                Icons.videocam,
+                size: 25,
               ),
               title: Text("娱乐")),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.person,size: 25,
+                Icons.person,
+                size: 25,
               ),
               title: Text("我的")),
         ],

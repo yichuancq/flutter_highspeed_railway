@@ -12,10 +12,6 @@ class MyImageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-//      onTap: () => Navigator.of(context).push(CupertinoPageRoute(
-//          builder: (context) => TestPage(
-//            content: title,
-//          ))),
       splashColor: Colors.grey,
       child: Stack(
         children: <Widget>[
@@ -32,7 +28,7 @@ class MyImageButton extends StatelessWidget {
                 ),
                 Text(
                   title,
-                  style: TextStyle(fontSize: 12.0),
+                  style: TextStyle(fontSize: 15.0),
                 )
               ],
             ),
@@ -52,30 +48,6 @@ class MyImageButton extends StatelessWidget {
     );
   }
 }
-//
-//class PriceText extends StatelessWidget {
-//  PriceText(this._price);
-//
-//  final String _price;
-//
-//  @override
-//  Widget build(BuildContext context) {
-//    return RichText(
-//      text: TextSpan(children: <TextSpan>[
-//        TextSpan(
-//            text: "￥", style: TextStyle(fontSize: 10.0, color: Colors.red)),
-//        TextSpan(
-//            text: _price,
-//            style: TextStyle(
-//                fontSize: 15.0,
-//                color: Colors.red,
-//                fontWeight: FontWeight.bold)),
-//        TextSpan(
-//            text: " 起", style: TextStyle(fontSize: 10.0, color: Colors.black))
-//      ]),
-//    );
-//  }
-//}
 
 class MyTag extends StatelessWidget {
   MyTag({@required this.tag, this.isEmphasize = false, this.radius = 3.0});
