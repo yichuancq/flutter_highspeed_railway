@@ -35,12 +35,12 @@ class _TripPageState extends State<TripPage> {
   ///header
   Widget _header() {
     return Container(
-      margin: EdgeInsets.only(top: 10, left: 5, right: 5),
+      margin: EdgeInsets.only(top: 5, left: 10, right: 10),
       child: Column(
         children: <Widget>[
           Card(
             //shadow
-            elevation: 5,
+            elevation: 10,
             child: Image.asset("assets/image/trip.jpeg", fit: BoxFit.fill),
           ),
           Text("开始一段新旅程",
@@ -132,18 +132,9 @@ class _TripPageState extends State<TripPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: Text(
-          "行程",
-          style: TextStyle(fontSize: 15, color: Colors.black),
-        ),
-//        backgroundColor: Colors.green,
-        elevation: 0,
-        toolbarOpacity: 1,
+      body: new SafeArea(
+        child: _builderBody(),
       ),
-      body: _builderBody(),
-      // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
