@@ -40,22 +40,22 @@ class _TabScaffoldState extends State<TabScaffold> {
           //底部显示的tabbar
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.home, //tabbar图标
+                Icons.home, size: 25, //tabbar图标
               ),
               title: Text("首页")), //tabbar标题
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.card_travel,
+                Icons.card_travel,size: 25,
               ),
               title: Text("行程")),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.videocam,
+                Icons.videocam,size: 25,
               ),
               title: Text("娱乐")),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.person,
+                Icons.person,size: 25,
               ),
               title: Text("我的")),
         ],
