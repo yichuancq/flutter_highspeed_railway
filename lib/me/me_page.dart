@@ -15,9 +15,10 @@ class _MePageState extends State<MePage> {
   ///header
   Widget _header() {
     return Container(
+      // 外边距
+      margin: EdgeInsets.only(top: 1),
       height: 130,
       width: MediaQuery.of(context).size.width,
-//      color: Colors.yellow,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -113,10 +114,48 @@ class _MePageState extends State<MePage> {
       margin: EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
       child: Column(
         children: <Widget>[
-          _myToolMenu(new Icon(Icons.card_membership), "我的卡券", "8张"),
-          _myToolMenu(new Icon(Icons.message), "用户反馈", ""),
-          _myToolMenu(new Icon(Icons.verified_user), "客服热线", "8:30-21:00"),
-          _myToolMenu(new Icon(Icons.info), "关于软件", "v2.0.5"),
+          InkWell(
+            onTap: () {
+              print("on click item...");
+            },
+            child: _myToolMenu(new Icon(Icons.card_membership), "我的卡券", "8张"),
+          ),
+          SizedBox(
+            child: Container(
+              height: 0.5,
+              color: Colors.grey,
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              print("on click item...");
+            },
+            child: _myToolMenu(new Icon(Icons.message), "用户反馈", ""),
+          ),
+          SizedBox(
+            child: Container(
+              height: 0.5,
+              color: Colors.grey,
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              print("on click item...");
+            },
+            child: _myToolMenu(new Icon(Icons.phone), "客服热线", "8:30-21:00"),
+          ),
+          SizedBox(
+            child: Container(
+              height: 0.5,
+              color: Colors.grey,
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              print("on click item...");
+            },
+            child: _myToolMenu(new Icon(Icons.info), "关于软件", "v2.0.5"),
+          ),
         ],
         //children: list,
       ),
@@ -140,12 +179,20 @@ class _MePageState extends State<MePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+//        title: Text(
+//          "个人中心",
+//          style: TextStyle(fontSize: 15, color: Colors.black),
+//        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         toolbarOpacity: 1,
         actions: <Widget>[
           IconButton(
-            icon: new Icon(Icons.notifications),
+            onPressed: () {},
+            icon: new Icon(
+              Icons.notifications,
+              color: Colors.blue,
+            ),
           )
         ],
       ),
