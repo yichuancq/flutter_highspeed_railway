@@ -124,6 +124,10 @@ class _TripPageState extends State<TripPage> {
           _header(),
           _hotCityLab(),
           _hotCity(),
+//          _hotCityLab(),
+//          _hotCity(),
+//          _hotCityLab(),
+//          _hotCity(),
         ],
       ),
     );
@@ -137,4 +141,18 @@ class _TripPageState extends State<TripPage> {
       ),
     );
   }
+
+//  @override
+//  Widget build(BuildContext context) {
+//    return Scaffold(
+//      body: RefreshIndicator(
+//        onRefresh: () async => await Future.delayed(Duration(seconds: 2), () {}),
+//        child: SingleChildScrollView(
+//          physics: null,
+//          child: new SafeArea(child: _builderBody()),
+//        ),
+//        //new SafeArea(child: _builderBody()),
+//      ),
+//    );
+//  }
 }

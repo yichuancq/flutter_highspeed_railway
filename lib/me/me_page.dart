@@ -23,7 +23,9 @@ class _MePageState extends State<MePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           ClipOval(
-              child: Image.asset("assets/image/girl2.jpeg", height: 100.0,
+              child: Image.asset(
+            "assets/image/girl2.jpeg",
+            height: 100.0,
           )),
           SizedBox(
             width: 5.0,
@@ -194,7 +196,7 @@ class _MePageState extends State<MePage> {
           )
         ],
       ),
-      body: _builderBody(),
+      body: new SafeArea(child: _builderBody()),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
