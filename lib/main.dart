@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_highspeed_railway/about/about.dart';
 import 'package:flutter_highspeed_railway/menu/menu.dart';
 
 void main() => runApp(MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: TabScaffold(),
+//      home: AboutPage(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_highspeed_railway/about/about.dart';
 import 'package:flutter_highspeed_railway/widget/common_widget.dart';
 
 /// me page
@@ -152,6 +153,7 @@ class _MePageState extends State<MePage> {
           ),
           InkWell(
             onTap: () {
+              doNavigator();
               print("on click item...");
             },
             child: _myToolMenu(new Icon(Icons.info), "关于软件", "v2.0.5"),
@@ -160,6 +162,13 @@ class _MePageState extends State<MePage> {
         //children: list,
       ),
     );
+  }
+
+
+  void doNavigator() {
+    Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
+      return AboutPage();
+    }));
   }
 
   ///
