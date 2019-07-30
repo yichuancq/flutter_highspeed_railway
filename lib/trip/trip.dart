@@ -38,18 +38,18 @@ class _TripPageState extends State<TripPage> {
       margin: EdgeInsets.only(top: 5, left: 10, right: 10),
       child: Column(
         children: <Widget>[
-          Card(
-            clipBehavior: Clip.hardEdge,
-            elevation: 10,
-            child: Image.asset("assets/image/trip.jpeg", fit: BoxFit.fill),
-          ),
+//          Card(
+//            clipBehavior: Clip.hardEdge,
+//            elevation: 10,
+//            child: Image.asset("assets/image/business.png", fit: BoxFit.fill),
+//          ),
           Text("开始一段新旅程",
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20.0)),
+                  fontSize: 25.0)),
           SizedBox(
-            height: 5,
+            height: 10,
           ),
           Text("官方铁路行程服务，让出行更省心",
               style: TextStyle(
@@ -124,10 +124,6 @@ class _TripPageState extends State<TripPage> {
           _header(),
           _hotCityLab(),
           _hotCity(),
-//          _hotCityLab(),
-//          _hotCity(),
-//          _hotCityLab(),
-//          _hotCity(),
         ],
       ),
     );
@@ -136,10 +132,17 @@ class _TripPageState extends State<TripPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new SafeArea(
-        child: _builderBody(),
-      ),
-    );
+        backgroundColor: Colors.white,
+        body: Container(
+          margin: EdgeInsets.only(top: 0),
+          child: Column(
+            children: <Widget>[
+              Image.asset("assets/image/business.png", fit: BoxFit.fill),
+              _builderBody(),
+            ],
+            // Image.asset("assets/image/business.png", fit: BoxFit.fill),
+          ),
+        ));
   }
 
 //  @override
