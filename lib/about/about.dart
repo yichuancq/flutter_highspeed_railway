@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_highspeed_railway/me/me_page.dart';
 import 'package:flutter_highspeed_railway/menu/menu.dart';
 
 class AboutPage extends StatefulWidget {
