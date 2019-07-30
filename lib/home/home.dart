@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
 
@@ -410,7 +411,6 @@ class _MyHomePageState extends State<HomePage> {
     );
   }
 
-
   ///图片轮播效果部件
   Widget swapPageView() {
     var container = new Container(
@@ -453,11 +453,25 @@ class _MyHomePageState extends State<HomePage> {
     return new Card(
       child: new Container(
         padding: const EdgeInsets.only(left: 0, bottom: 0),
-        child: Image.asset("assets/image/保险.jpeg", fit: BoxFit
-            .fill),
+        child: Image.asset("assets/image/保险.jpeg", fit: BoxFit.fill),
       ),
     );
   }
+
+  Widget _buttomBar() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(
+          Icons.train,
+          size: 15,
+          color: Colors.grey,
+        ),
+        Text("中国铁路智慧出行", style: TextStyle(color: Colors.grey, fontSize: 13)),
+      ],
+    );
+  }
+
   ///
   Widget _builderBody() {
     return Container(
@@ -469,9 +483,6 @@ class _MyHomePageState extends State<HomePage> {
           _builderToolMenu(),
 //      添加行程
           _addTrip(),
-          SizedBox(
-            height: 10,
-          ),
           _hotLab("精彩推荐"),
           scrollBanner(),
           SizedBox(
@@ -480,6 +491,8 @@ class _MyHomePageState extends State<HomePage> {
           _hotLab("行程服务"),
           myService(),
           _swapBanner(),
+          //
+          _buttomBar(),
         ],
       ),
     );
