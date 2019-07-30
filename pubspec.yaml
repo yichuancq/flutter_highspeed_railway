@@ -29,6 +29,8 @@ dependencies:
   flutter_badge: 0.0.1
   #
   flutter_staggered_grid_view: any
+  #图片轮播
+#  flutter_swiper: ^1.0.6
   #alert
 #  rflutter_alert: any
   #fancy_bottom

@@ -21,6 +21,10 @@ samples, guidance on mobile development, and a full API reference.
 
 ## UI效果
 
+- 主页UI效果
+
+<img src="https://github.com/yichuancq/flutter_highspeed_railway/blob/master/screenshort/home.png" width="40%" height="40%">
+
 - 个人中心UI效果
 
 <img src="https://github.com/yichuancq/flutter_highspeed_railway/blob/master/screenshort/me.png" width="40%" height="40%">

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_swiper/flutter_swiper.dart';
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
 
@@ -398,6 +398,66 @@ class _MyHomePageState extends State<HomePage> {
     );
   }
 
+  ///滑动广告位
+  Widget _swapBanner() {
+    return new Container(
+      //高度
+      height: 160,
+      //显示宽度
+      width: MediaQuery.of(context).size.width,
+      color: Colors.white,
+      child: swapPageView(),
+    );
+  }
+
+
+  ///图片轮播效果部件
+  Widget swapPageView() {
+    var container = new Container(
+//      height: 80,
+      child: new Swiper(
+        itemBuilder: (BuildContext context, int index) {
+          return cardView();
+        },
+        itemCount: 5,
+        //自动翻页
+        autoplay: true,
+        layout: SwiperLayout.DEFAULT,
+        // 分页指示器
+        pagination: SwiperPagination(
+            alignment: Alignment.bottomCenter, // 位置 Alignment.bottomRight
+            margin: const EdgeInsets.fromLTRB(0, 0, 20, 10), // 距离调整
+            //圆点滚动
+            // 指示器构建
+            builder: DotSwiperPaginationBuilder(
+              // 字体颜色
+              color: Colors.white,
+              // 当前的指示字体颜色
+              activeColor: Colors.blueAccent,
+              // 大小
+              size: 5,
+              // 当前的指示字体大小
+              activeSize: 8,
+              space: 1,
+            )),
+        scale: 0.95,
+        // 两张图片之间的间隔
+        viewportFraction: 0.8, // 当前视窗展示比例 小于1可见上一个和下一个视窗
+      ),
+    );
+    return container;
+  }
+
+  ///cardView
+  Widget cardView() {
+    return new Card(
+      child: new Container(
+        padding: const EdgeInsets.only(left: 0, bottom: 0),
+        child: Image.asset("assets/image/保险.jpeg", fit: BoxFit
+            .fill),
+      ),
+    );
+  }
   ///
   Widget _builderBody() {
     return Container(
@@ -410,15 +470,16 @@ class _MyHomePageState extends State<HomePage> {
 //      添加行程
           _addTrip(),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           _hotLab("精彩推荐"),
           scrollBanner(),
           SizedBox(
-            height: 20,
+            height: 10,
           ),
           _hotLab("行程服务"),
           myService(),
+          _swapBanner(),
         ],
       ),
     );
