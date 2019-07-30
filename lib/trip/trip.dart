@@ -22,7 +22,7 @@ class _TripPageState extends State<TripPage> {
       splashColor: Colors.white,
       label: Text(
         "添加行程",
-        style: TextStyle(color: Colors.white,fontSize: 20),
+        style: TextStyle(color: Colors.white, fontSize: 20),
       ),
       onPressed: () {},
       shape: RoundedRectangleBorder(
@@ -39,7 +39,7 @@ class _TripPageState extends State<TripPage> {
       child: Column(
         children: <Widget>[
           Card(
-            //shadow
+            clipBehavior: Clip.hardEdge,
             elevation: 10,
             child: Image.asset("assets/image/trip.jpeg", fit: BoxFit.fill),
           ),
