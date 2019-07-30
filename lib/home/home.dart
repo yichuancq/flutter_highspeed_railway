@@ -276,7 +276,7 @@ class _MyHomePageState extends State<HomePage> {
     );
   }
 
-  ///滑动排行
+  ///精彩推荐
   Widget scrollBanner() {
     return new Container(
       color: Colors.white,
@@ -332,6 +332,7 @@ class _MyHomePageState extends State<HomePage> {
     );
   }
 
+  ///行程服务
   Widget myService() {
     return new Container(
       margin: EdgeInsets.only(top: 2, left: 0, right: 0),
@@ -501,6 +502,7 @@ class _MyHomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: _builderBody(),
       ),
