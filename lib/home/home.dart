@@ -287,6 +287,7 @@ class _MyHomePageState extends State<HomePage> {
         addAutomaticKeepAlives: true,
         children: <Widget>[
           Card(
+            elevation: 10,
             child: card(
                 "极速打车",
                 "一起来约 \"\惠\" ",
@@ -296,6 +297,7 @@ class _MyHomePageState extends State<HomePage> {
                 )),
           ),
           Card(
+            elevation: 10,
             child: card(
                 "车站大屏",
                 "列车动态早知道",
@@ -305,6 +307,7 @@ class _MyHomePageState extends State<HomePage> {
                 )),
           ),
           Card(
+            elevation: 10,
             child: card(
                 "极速打车",
                 "因为你的热爱",
@@ -314,6 +317,7 @@ class _MyHomePageState extends State<HomePage> {
                 )),
           ),
           Card(
+            elevation: 10,
             child: card(
                 "极速打车",
                 "一起逛逛",
