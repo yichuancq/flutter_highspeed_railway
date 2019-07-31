@@ -35,7 +35,7 @@ class _TabScaffoldState extends State<TabRecommend> {
         layout: SwiperLayout.DEFAULT,
         // 分页指示器
         pagination: SwiperPagination(
-            alignment: Alignment.bottomCenter, // 位置 Alignment.bottomRight
+            alignment: Alignment.bottomRight, // 位置 Alignment.bottomRight
             margin: const EdgeInsets.fromLTRB(0, 0, 20, 10), // 距离调整
             //圆点滚动
             // 指示器构建
@@ -52,7 +52,7 @@ class _TabScaffoldState extends State<TabRecommend> {
             )),
         scale: 0.95,
         // 两张图片之间的间隔
-        viewportFraction: 0.8, // 当前视窗展示比例 小于1可见上一个和下一个视窗
+        viewportFraction: 1, // 当前视窗展示比例 小于1可见上一个和下一个视窗
       ),
     );
     return container;
@@ -127,12 +127,12 @@ class _TabScaffoldState extends State<TabRecommend> {
         _filmCard('assets/image/fm4.jpeg', "我的电影名称", "评分:7.3"),
         _filmCard('assets/image/fm5.jpeg', "我的电影名称", "评分:7.3"),
         _filmCard('assets/image/fm6.jpeg', "我的电影名称", "评分:7.3"),
-        _filmCard('assets/image/fm7.jpeg', "我的电影名称", "评分:7.3"),
-        _filmCard('assets/image/fm8.jpeg', "我的电影名称", "评分:7.3"),
-        _filmCard('assets/image/fm9.jpeg', "我的电影名称", "评分:7.3"),
-        _filmCard('assets/image/fm10.jpeg', "我的电影名称", "评分:7.3"),
-        _filmCard('assets/image/fm11.jpeg', "我的电影名称", "评分:7.3"),
-        _filmCard('assets/image/fm12.jpeg', "我的电影名称", "评分:7.3"),
+//        _filmCard('assets/image/fm7.jpeg', "我的电影名称", "评分:7.3"),
+//        _filmCard('assets/image/fm8.jpeg', "我的电影名称", "评分:7.3"),
+//        _filmCard('assets/image/fm9.jpeg', "我的电影名称", "评分:7.3"),
+//        _filmCard('assets/image/fm10.jpeg', "我的电影名称", "评分:7.3"),
+//        _filmCard('assets/image/fm11.jpeg', "我的电影名称", "评分:7.3"),
+//        _filmCard('assets/image/fm12.jpeg', "我的电影名称", "评分:7.3"),
       ],
     );
   }
@@ -185,6 +185,45 @@ class _TabScaffoldState extends State<TabRecommend> {
     );
   }
 
+  /// filmInfo
+  Widget _filmInfo(String imgURL, String name) {
+    return Container(
+      padding: EdgeInsets.only(left: 10),
+//      elevation: 0.5,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Image.asset(imgURL, width: 140, fit: BoxFit.fill),
+          Text(name,
+              style: TextStyle(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15.0)),
+        ],
+      ),
+    );
+  }
+
+  /// 热门城市
+  Widget _hotFilms() {
+    return Container(
+      height: 230,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          _filmInfo("assets/image/fm6.jpeg", "我的电影名称"),
+          _filmInfo("assets/image/fm8.jpeg", "我的电影名称"),
+          _filmInfo("assets/image/fm9.jpeg", "我的电影名称"),
+          _filmInfo("assets/image/fm10.jpeg", "我的电影名称"),
+          _filmInfo("assets/image/fm11.jpeg", "我的电影名称"),
+          _filmInfo("assets/image/fm12.jpeg", "我的电影名称"),
+          _filmInfo("assets/image/fm13.jpeg", "我的电影名称"),
+          _filmInfo("assets/image/fm14.jpeg", "我的电影名称"),
+        ],
+      ),
+    );
+  }
+
   Widget _builderBody() {
     return ListView(
       shrinkWrap: true,
@@ -195,6 +234,8 @@ class _TabScaffoldState extends State<TabRecommend> {
         _content(),
         _hotLab("欧美"),
         _content2(),
+        _hotLab("热门电影"),
+        _hotFilms(),
       ],
     );
   }
