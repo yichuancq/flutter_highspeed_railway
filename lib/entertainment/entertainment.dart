@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_highspeed_railway/entertainment/recommend.dart';
 
 class EntertainmentPage extends StatefulWidget {
   EntertainmentPage({Key key}) : super(key: key);
@@ -9,22 +10,65 @@ class EntertainmentPage extends StatefulWidget {
 }
 
 class _EntertainmentPageState extends State<EntertainmentPage> {
+  ///娱乐
+  Widget _tabPage() {
+    const tabStr = <String>[
+      "推荐",
+      "飞驰影院",
+      "游戏",
+    ];
+    return DefaultTabController(
+        length: 3,
+        child: DefaultTextStyle(
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            inherit: false,
+            fontSize: 20.0,
+          ),
+          child: SafeArea(
+            child: Scaffold(
+              appBar: AppBar(
+                backgroundColor: Colors.white,
+                elevation: 0.0,
+                title: TabBar(
+                    labelColor: Colors.black38,
+                    //selectedLabelColor: Colors.blueAccent,
+                    indicatorSize: TabBarIndicatorSize.label,
+                    labelPadding: EdgeInsets.all(0.0),
+                    isScrollable: false,
+                    tabs: tabStr
+                        .map((str) => Tab(
+                              key: Key(str),
+                              text: str,
+                            ))
+                        .toList()),
+              ),
+              body: Container(
+//                decoration: GradientDecoration,
+                padding: const EdgeInsets.only(left: 0, right: 0, top: 0),
+                child: TabBarView(children: <Widget>[
+                  TabRecommend(),
+                  Center(
+                    child: Text(
+                      "飞驰影院",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      "游戏",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                  ),
+                ]),
+              ),
+            ),
+          ),
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'EntertainmentPage',
-            ),
-          ],
-        ),
-      ),
-      // This trailing comma makes auto-formatting nicer for build methods.
-    );
+    return _tabPage();
   }
 }
