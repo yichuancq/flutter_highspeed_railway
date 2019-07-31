@@ -71,7 +71,7 @@ class _TabScaffoldState extends State<TabRecommend> {
   ///热门标签
   Widget _hotLab(String title) {
     return Container(
-      margin: EdgeInsets.only(top: 10, left: 10),
+      margin: EdgeInsets.only(top: 10, left: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
@@ -101,23 +101,106 @@ class _TabScaffoldState extends State<TabRecommend> {
     );
   }
 
-  ///
-  Widget _builderBody() {
+  Widget _content() {
+    return buildGridViewCount();
+  }
+
+  Widget _content2() {
+    return buildGridViewExtent();
+  }
+
+  //GridView.count 允许您指定列数
+  Widget buildGridViewCount() {
+    return new GridView.count(
+//      padding: EdgeInsets.only(left: 0, right: 0),
+      crossAxisCount: 2,
+      shrinkWrap: true,
+      ////禁用滑动事件
+      physics: new NeverScrollableScrollPhysics(),
+      // padding: const EdgeInsets.all(0.0),
+      mainAxisSpacing: 10.0,
+      crossAxisSpacing: 0.0,
+      children: <Widget>[
+        _filmCard('assets/image/fm1.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm2.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm3.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm4.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm5.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm6.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm7.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm8.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm9.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm10.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm11.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm12.jpeg', "我的电影名称", "评分:7.3"),
+      ],
+    );
+  }
+
+//GridView.extent 允许您指定项的最大像素宽度
+  Widget buildGridViewExtent() {
+    return new GridView.extent(
+//      padding: EdgeInsets.only(left: 10, right: 10),
+      shrinkWrap: true,
+      //禁用滑动事件
+      physics: new NeverScrollableScrollPhysics(),
+      maxCrossAxisExtent: 200.0,
+      mainAxisSpacing: 10.0,
+      crossAxisSpacing: 10.0,
+      children: <Widget>[
+        _filmCard('assets/image/fm7.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm8.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm12.jpeg', "我的电影名称", "评分:7.3"),
+      ],
+    );
+  }
+
+  //film
+  Widget _filmCard(String imgUrl, String title, String subTitle) {
     return Container(
-      color: Colors.white,
+//      child: Card(
+      padding: EdgeInsets.only(left: 10, right: 10),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          //添加显示打部件
-          _swapBanner(),
-          _labHead(),
+          Container(
+            width: double.infinity,
+            height: 160,
+            child: Image.asset(
+              imgUrl,
+              fit: BoxFit.fitWidth,
+            ),
+          ),
+          Text(
+            title,
+            style: TextStyle(fontSize: 17, color: Colors.black87),
+          ),
+          Text(
+            subTitle,
+            style: TextStyle(fontSize: 13, color: Colors.grey),
+          ),
         ],
       ),
+//      ),
+    );
+  }
+
+  Widget _builderBody() {
+    return ListView(
+      shrinkWrap: true,
+      children: <Widget>[
+        //添加显示打部件
+        _swapBanner(),
+        _labHead(),
+        _content(),
+        _hotLab("欧美"),
+        _content2(),
+      ],
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: _builderBody(),
     );
