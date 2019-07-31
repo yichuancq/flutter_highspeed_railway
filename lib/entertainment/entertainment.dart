@@ -27,6 +27,7 @@ class _EntertainmentPageState extends State<EntertainmentPage> {
           ),
           child: SafeArea(
             child: Scaffold(
+              backgroundColor: Colors.white,
               appBar: AppBar(
                 backgroundColor: Colors.white,
                 elevation: 0.0,

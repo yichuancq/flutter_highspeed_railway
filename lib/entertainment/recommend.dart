@@ -112,7 +112,7 @@ class _TabScaffoldState extends State<TabRecommend> {
   //GridView.count 允许您指定列数
   Widget buildGridViewCount() {
     return new GridView.count(
-//      padding: EdgeInsets.only(left: 0, right: 0),
+      childAspectRatio: 1 / 1.5,
       crossAxisCount: 2,
       shrinkWrap: true,
       ////禁用滑动事件
@@ -140,7 +140,8 @@ class _TabScaffoldState extends State<TabRecommend> {
 //GridView.extent 允许您指定项的最大像素宽度
   Widget buildGridViewExtent() {
     return new GridView.extent(
-//      padding: EdgeInsets.only(left: 10, right: 10),
+      //宽高比
+      childAspectRatio: 1 / 1.5,
       shrinkWrap: true,
       //禁用滑动事件
       physics: new NeverScrollableScrollPhysics(),
@@ -150,14 +151,14 @@ class _TabScaffoldState extends State<TabRecommend> {
       children: <Widget>[
         _filmCard('assets/image/fm7.jpeg', "我的电影名称", "评分:7.3"),
         _filmCard('assets/image/fm8.jpeg', "我的电影名称", "评分:7.3"),
-        _filmCard('assets/image/fm12.jpeg', "我的电影名称", "评分:7.3"),
+        _filmCard('assets/image/fm12.jpeg', "我的电影名称我的电影名称我的电影名", "评分:7.3"),
       ],
     );
   }
 
   //film
   Widget _filmCard(String imgUrl, String title, String subTitle) {
-    double imageHeight = 160;
+//    double imageHeight = 220;
     return Container(
       padding: EdgeInsets.only(left: 10, right: 10),
       child: Column(
@@ -167,8 +168,8 @@ class _TabScaffoldState extends State<TabRecommend> {
           Image.asset(
             imgUrl,
             width: double.infinity,
-            height: imageHeight,
-            fit: BoxFit.fitWidth,
+//            height: imageHeight,
+            fit: BoxFit.fill,
           ),
           Text(
             title,
@@ -201,6 +202,7 @@ class _TabScaffoldState extends State<TabRecommend> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+//      backgroundColor: Colors.grey,
       body: _builderBody(),
     );
   }
