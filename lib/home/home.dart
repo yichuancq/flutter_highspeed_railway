@@ -139,7 +139,7 @@ class _MyHomePageState extends State<HomePage> {
               child: Column(
                 children: <Widget>[
                   SizedBox(
-                    height: 15,
+                    height: 20,
                   ),
                   Column(
                     children: <Widget>[
@@ -227,10 +227,10 @@ class _MyHomePageState extends State<HomePage> {
   ///自定义卡片
   Widget card(String title, String subTitle, Icon cardIcon) {
     var container = new Container(
-      color: Colors.blueAccent,
+//      color: Colors.blueAccent,
       //外边距
       margin: EdgeInsets.only(top: 0, left: 0, right: 0),
-      padding: EdgeInsets.all(15),
+      padding: EdgeInsets.all(25),
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -243,14 +243,14 @@ class _MyHomePageState extends State<HomePage> {
                 Expanded(
                   child: Container(
                     child: new Text(title,
-                        style: TextStyle(color: Colors.white, fontSize: 17)),
+                        style: TextStyle(color: Colors.black87, fontSize: 17)),
                   ),
                 ),
                 Expanded(
                   child: Container(
                     child: new Text(
                       subTitle,
-                      style: TextStyle(color: Colors.white, fontSize: 13),
+                      style: TextStyle(color: Colors.grey, fontSize: 13),
                     ),
                   ),
                   // child: new Text("aaa"),
@@ -281,50 +281,46 @@ class _MyHomePageState extends State<HomePage> {
     return new Container(
       color: Colors.white,
       height: 100,
-      margin: EdgeInsets.only(top: 0, left: 0, right: 0),
+      margin: EdgeInsets.only(top: 0, left: 10, right: 10),
       child: new ListView(
         ///水平滚动
         scrollDirection: Axis.horizontal,
         addAutomaticKeepAlives: true,
         children: <Widget>[
           Card(
-            elevation: 10,
+            elevation: 1,
             child: card(
                 "极速打车",
                 "一起来约 \"\惠\" ",
                 new Icon(
                   Icons.local_taxi,
-                  color: Colors.white,
                 )),
           ),
           Card(
-            elevation: 10,
+            elevation: 1,
             child: card(
                 "车站大屏",
                 "列车动态早知道",
                 new Icon(
                   Icons.wifi_tethering,
-                  color: Colors.white,
                 )),
           ),
           Card(
-            elevation: 10,
+            elevation: 1,
             child: card(
                 "极速打车",
                 "因为你的热爱",
                 new Icon(
                   Icons.show_chart,
-                  color: Colors.white,
                 )),
           ),
           Card(
-            elevation: 10,
+            elevation: 1,
             child: card(
                 "极速打车",
                 "一起逛逛",
                 new Icon(
                   Icons.remove_red_eye,
-                  color: Colors.white,
                 )),
           ),
         ],
@@ -459,6 +455,7 @@ class _MyHomePageState extends State<HomePage> {
     );
   }
 
+  ///底部显示区域
   Widget _buttomBar() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -484,6 +481,7 @@ class _MyHomePageState extends State<HomePage> {
           _builderToolMenu(),
 //      添加行程
           _addTrip(),
+//          _addTrip2(),
           _hotLab("精彩推荐"),
           scrollBanner(),
           SizedBox(

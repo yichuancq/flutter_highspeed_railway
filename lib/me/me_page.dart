@@ -164,7 +164,6 @@ class _MePageState extends State<MePage> {
     );
   }
 
-
   void doNavigator() {
     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
       return AboutPage();
@@ -188,10 +187,6 @@ class _MePageState extends State<MePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-//        title: Text(
-//          "个人中心",
-//          style: TextStyle(fontSize: 15, color: Colors.black),
-//        ),
         backgroundColor: Colors.transparent,
         elevation: 0,
         toolbarOpacity: 1,
