@@ -32,7 +32,6 @@ class _EntertainmentPageState extends State<EntertainmentPage> {
                 elevation: 0.0,
                 title: TabBar(
                     labelColor: Colors.black38,
-                    //selectedLabelColor: Colors.blueAccent,
                     indicatorSize: TabBarIndicatorSize.label,
                     labelPadding: EdgeInsets.all(0.0),
                     isScrollable: false,
@@ -43,9 +42,7 @@ class _EntertainmentPageState extends State<EntertainmentPage> {
                             ))
                         .toList()),
               ),
-              body: Container(
-//                decoration: GradientDecoration,
-                padding: const EdgeInsets.only(left: 0, right: 0, top: 0),
+              body: Center(
                 child: TabBarView(children: <Widget>[
                   TabRecommend(),
                   Center(

@@ -157,23 +157,23 @@ class _TabScaffoldState extends State<TabRecommend> {
 
   //film
   Widget _filmCard(String imgUrl, String title, String subTitle) {
+    double imageHeight = 160;
     return Container(
-//      child: Card(
       padding: EdgeInsets.only(left: 10, right: 10),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // 文字左对齐
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Container(
+          Image.asset(
+            imgUrl,
             width: double.infinity,
-            height: 160,
-            child: Image.asset(
-              imgUrl,
-              fit: BoxFit.fitWidth,
-            ),
+            height: imageHeight,
+            fit: BoxFit.fitWidth,
           ),
           Text(
             title,
-            style: TextStyle(fontSize: 17, color: Colors.black87),
+            maxLines: 2,
+            style: TextStyle(fontSize: 15, color: Colors.black87),
           ),
           Text(
             subTitle,
@@ -181,7 +181,6 @@ class _TabScaffoldState extends State<TabRecommend> {
           ),
         ],
       ),
-//      ),
     );
   }
 
