@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 class HomePage extends StatefulWidget {
@@ -122,79 +123,85 @@ class _MyHomePageState extends State<HomePage> {
   Widget _addTrip() {
     //掌上高铁伴你出行
     return Container(
-      margin: EdgeInsets.only(top: 20, left: 10, right: 10),
       height: 110,
+      width: MediaQuery.of(context).size.width * 0.8,
+      margin: EdgeInsets.only(top: 20, left: 10, right: 10),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/image/home_add_trip_background.png"),
           fit: BoxFit.fill,
         ),
       ),
-      child: Container(
-        margin: EdgeInsets.only(top: 10, left: 10, right: 10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Container(
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Column(
-                    children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Text("掌上高铁伴你出行",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20)),
-                          SizedBox(
-                            width: 90,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Column(
-                    children: <Widget>[
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(
-                            Icons.verified_user,
-                            size: 20,
-                            color: Colors.white,
-                          ),
-                          Text("行程提醒", style: TextStyle(color: Colors.white)),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Icon(
-                            Icons.verified_user,
-                            color: Colors.white,
-                            size: 20,
-                          ),
-                          Text("官方正晚点", style: TextStyle(color: Colors.white)),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Icon(
-                            Icons.verified_user,
-                            size: 20,
-                            color: Colors.white,
-                          ),
-                          Text("成长积分", style: TextStyle(color: Colors.white)),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+//      child: Container(
+//
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(top: 10, left: 1, right: 10),
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 20,
+                ),
+                Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Text("掌上高铁伴你出行",
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 20)),
+                        SizedBox(
+                          width: 90,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Column(
+                  children: <Widget>[
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.verified_user,
+                          size: 20,
+                          color: Colors.white,
+                        ),
+                        Text("行程提醒", style: TextStyle(color: Colors.white)),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Icon(
+                          Icons.verified_user,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                        Text("官方正晚点", style: TextStyle(color: Colors.white)),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Icon(
+                          Icons.verified_user,
+                          size: 20,
+                          color: Colors.white,
+                        ),
+                        Text("成长积分", style: TextStyle(color: Colors.white)),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
             ),
-            RaisedButton.icon(
+          ),
+          Container(
+            margin: EdgeInsets.only(right: 5),
+            // width: 110,
+            child: RaisedButton.icon(
               color: Colors.white,
               icon: Icon(Icons.add),
               label: Text("添加行程"),
@@ -204,10 +211,11 @@ class _MyHomePageState extends State<HomePage> {
                 borderRadius: BorderRadius.all(Radius.circular(40)),
               ),
             ),
-          ],
-          // RaisedButton.icon(),
-        ),
+          ),
+        ],
+        // RaisedButton.icon(),
       ),
+//      ),
     );
   }
 
@@ -475,25 +483,26 @@ class _MyHomePageState extends State<HomePage> {
     return Container(
         // color: Colors.white,
         child: ListView(
-          children: <Widget>[
-            _header(),
-            //
-            _builderToolMenu(),
+      children: <Widget>[
+        _header(),
+        //
+        _builderToolMenu(),
 //      添加行程
-            _addTrip(),
+
+        _addTrip(),
 //          _addTrip2(),
-            _hotLab("精彩推荐"),
-            scrollBanner(),
-            SizedBox(
-              height: 10,
-            ),
-            _hotLab("行程服务"),
-            myService(),
-            _swapBanner(),
-            //
-            _buttomBar(),
-          ],
-        ));
+        _hotLab("精彩推荐"),
+        scrollBanner(),
+        SizedBox(
+          height: 10,
+        ),
+        _hotLab("行程服务"),
+        myService(),
+        _swapBanner(),
+        //
+        _buttomBar(),
+      ],
+    ));
   }
 
   @override

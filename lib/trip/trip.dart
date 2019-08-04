@@ -37,11 +37,6 @@ class _TripPageState extends State<TripPage> {
       margin: EdgeInsets.only(top: 5, left: 10, right: 10),
       child: Column(
         children: <Widget>[
-//          Card(
-//            clipBehavior: Clip.hardEdge,
-//            elevation: 10,
-//            child: Image.asset("assets/image/business.png", fit: BoxFit.fill),
-//          ),
           Text("开始一段新旅程",
               style: TextStyle(
                   color: Colors.black,
