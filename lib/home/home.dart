@@ -126,7 +126,7 @@ class _MyHomePageState extends State<HomePage> {
       height: 110,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/image//home_add_trip_background.png"),
+          image: AssetImage("assets/image/home_add_trip_background.png"),
           fit: BoxFit.fitHeight,
         ),
       ),
@@ -473,28 +473,27 @@ class _MyHomePageState extends State<HomePage> {
   ///
   Widget _builderBody() {
     return Container(
-      color: Colors.white,
-      child: Column(
-        children: <Widget>[
-          _header(),
-          //
-          _builderToolMenu(),
+        // color: Colors.white,
+        child: ListView(
+          children: <Widget>[
+            _header(),
+            //
+            _builderToolMenu(),
 //      添加行程
-          _addTrip(),
+            _addTrip(),
 //          _addTrip2(),
-          _hotLab("精彩推荐"),
-          scrollBanner(),
-          SizedBox(
-            height: 10,
-          ),
-          _hotLab("行程服务"),
-          myService(),
-          _swapBanner(),
-          //
-          _buttomBar(),
-        ],
-      ),
-    );
+            _hotLab("精彩推荐"),
+            scrollBanner(),
+            SizedBox(
+              height: 10,
+            ),
+            _hotLab("行程服务"),
+            myService(),
+            _swapBanner(),
+            //
+            _buttomBar(),
+          ],
+        ));
   }
 
   @override

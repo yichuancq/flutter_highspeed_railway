@@ -151,7 +151,7 @@ class _TabScaffoldState extends State<TabRecommend> {
       children: <Widget>[
         _filmCard('assets/image/fm7.jpeg', "我的电影名称", "评分:7.3"),
         _filmCard('assets/image/fm8.jpeg', "我的电影名称", "评分:7.3"),
-        _filmCard('assets/image/fm12.jpeg', "我的电影名称我的电影名称我的电影名", "评分:7.3"),
+        _filmCard('assets/image/fm12.jpeg', "我的电影名称", "评分:7.3"),
       ],
     );
   }
