@@ -2,7 +2,8 @@
 
 flutter掌上高铁demo
 
-- 项目只供学习参考非商业用途 
+- 项目只供学习参考非商业用途
+- 已经在安卓真机上调试运行过，支持4.6寸小屏幕，调试系统版本是android4.2
 - developer: yichuan  email:1012027293@qq.com
 
 ## Getting Started
