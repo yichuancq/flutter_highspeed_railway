@@ -123,7 +123,7 @@ class _MyHomePageState extends State<HomePage> {
   Widget _addTrip() {
     //掌上高铁伴你出行
     return Container(
-      height: 110,
+      height: 100,
       width: MediaQuery.of(context).size.width * 0.8,
       margin: EdgeInsets.only(top: 20, left: 10, right: 10),
       decoration: BoxDecoration(
@@ -133,17 +133,17 @@ class _MyHomePageState extends State<HomePage> {
         ),
       ),
 //      child: Container(
-//
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        padding: EdgeInsets.all(10),
+
         children: <Widget>[
           Container(
             margin: EdgeInsets.only(top: 10, left: 1, right: 10),
             child: Column(
               children: <Widget>[
                 SizedBox(
-                  height: 20,
+                  height: 5,
                 ),
                 Column(
                   children: <Widget>[
@@ -199,8 +199,7 @@ class _MyHomePageState extends State<HomePage> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(right: 5),
-            // width: 110,
+            margin: EdgeInsets.only(top: 20, bottom: 20),
             child: RaisedButton.icon(
               color: Colors.white,
               icon: Icon(Icons.add),
@@ -208,7 +207,7 @@ class _MyHomePageState extends State<HomePage> {
               splashColor: Colors.grey,
               onPressed: () {},
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(40)),
+                borderRadius: BorderRadius.all(Radius.circular(30)),
               ),
             ),
           ),
