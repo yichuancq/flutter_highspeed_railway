@@ -173,7 +173,7 @@ class _MePageState extends State<MePage> {
   ///
   Widget _builderBody() {
     return Container(
-      child: Column(
+      child: ListView(
         children: <Widget>[
           _header(),
           _headerBarBtn(),

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 /// 行程
 class TripPage extends StatefulWidget {
   TripPage({Key key}) : super(key: key);
@@ -115,12 +114,12 @@ class _TripPageState extends State<TripPage> {
       ),
     );
   }
-
   ///
   Widget _builderBody() {
     return Container(
       child: Column(
         children: <Widget>[
+          Image.asset("assets/image/business.png", fit: BoxFit.fill),
           _header(),
           _hotCityLab(),
           _hotCity(),
@@ -135,27 +134,12 @@ class _TripPageState extends State<TripPage> {
         backgroundColor: Colors.white,
         body: Container(
           margin: EdgeInsets.only(top: 0),
-          child: Column(
+          child: ListView(
             children: <Widget>[
-              Image.asset("assets/image/business.png", fit: BoxFit.fill),
               _builderBody(),
             ],
             // Image.asset("assets/image/business.png", fit: BoxFit.fill),
           ),
         ));
   }
-
-//  @override
-//  Widget build(BuildContext context) {
-//    return Scaffold(
-//      body: RefreshIndicator(
-//        onRefresh: () async => await Future.delayed(Duration(seconds: 2), () {}),
-//        child: SingleChildScrollView(
-//          physics: null,
-//          child: new SafeArea(child: _builderBody()),
-//        ),
-//        //new SafeArea(child: _builderBody()),
-//      ),
-//    );
-//  }
 }

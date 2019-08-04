@@ -127,7 +127,7 @@ class _MyHomePageState extends State<HomePage> {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/image/home_add_trip_background.png"),
-          fit: BoxFit.fitHeight,
+          fit: BoxFit.fill,
         ),
       ),
       child: Container(
